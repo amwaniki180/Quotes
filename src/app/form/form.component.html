@@ -1,3 +1,44 @@
-<p>
-  form works!
-</p>
+<div class="container-fluid">
+    <div class="card-deck">
+        <div class="row">
+            <form (ngSubmit)="submitQuote()" #quoteForm="ngForm">
+                <h3 id="head">QUOTES WITH MEANING</h3>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" required class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name="ngModel" required>
+
+                    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                        <p> Name Needed</p>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <label for="author">Author</label>
+                    <input type="text" required class="form-control" id="author" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
+
+                    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                        <p> Author Nee</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="quotes">Quotes</label>
+                    <textarea class="form-control" id="" rows="4" [(ngModel)]="newQuote.quotes" name="quotes" #Quotes="ngModel" required></textarea>
+                    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                        <p> Quote Needed</p>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="complete">Completion</label>
+                    <br>
+                    <input type='date' id="complete" [(ngModel)]="newQuote.completeDate" name="completeDate" #completeDate="ngModel" required>
+                    <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+                        <p>Fill Date</p>
+                    </div>
+                </div>
+                <button type="Submit" class="btn btn-success btn-lg">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
