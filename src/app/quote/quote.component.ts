@@ -7,27 +7,31 @@ import { Quote } from '../quote';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  quote = [
+  quotes = [ new Quote(0, "hello", "Iam", "Hijab", new Date(2019,5,1), 0,0)
   
   ];
   completeQuote(isComplete,index){
     if(isComplete){
-      let toDelete = confirm(`are you ${this.quote[index].name}`)
+      let toDelete = confirm(`are you ${this.quotes[index].name}`)
       if (toDelete){
-        this.quote.splice(index,1);
+        this.quotes.splice(index,1);
       }
     }
   }
   formReceive(quote) {
-    this.quote.push(quote);
+    let qLength = this.quotes.length;
+    quote.id = qLength++;
+    quote.completeDate = new Date(quote.completeDate);
+    this.quotes.push(quote);
+    console.log(this.quotes)
 
   }
   addVote(index) {
-    this.quote[index].upvote =+1;
+    this.quotes[index].upvote ++;
   }
 
   minusVote(index) {
-    this.quote[index].downvote =+1;
+    this.quotes[index].downvote ++;
     
   };
 

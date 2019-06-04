@@ -12,7 +12,11 @@ export class FormComponent implements OnInit {
 
   submitQuote() {
       this.addQuote.emit(this.newQuote);
+      // console.log(this.newQuote);
       this.newQuote = new Quote(0, '', ' ', ' ', new Date(), 0 , 0);
+  }
+  button() {
+    console.log("hello");
   }
 
   constructor() { }
