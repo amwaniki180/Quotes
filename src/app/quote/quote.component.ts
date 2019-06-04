@@ -7,7 +7,7 @@ import { Quote } from '../quote';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  quotes = [ new Quote(0, "hello", "Iam", "Hijab", new Date(2019,5,1), 0,0)
+  quotes = [ new Quote(0, "tony", "neil barringham", "the grass is greener where you water it", new Date(2019,5,1), 0,0)
   
   ];
   completeQuote(isComplete,index){

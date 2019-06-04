@@ -16,7 +16,7 @@ export class FormComponent implements OnInit {
       this.newQuote = new Quote(0, '', ' ', ' ', new Date(), 0 , 0);
   }
   button() {
-    console.log("hello");
+    console.log("sure you want to delete");
   }
 
   constructor() { }
