@@ -1,9 +1,0 @@
-<app-form (addQuote)="formReceive($event)"></app-form>
-<div *ngFor="let quote of quotes;let i = index">
-    <p>{{quote.name}}<br>{{quote.quotes}} <br>written by {{quote.author}} <br>submitted on {{quote.completeDate|date}}</p>
-    <app-details (isComplete)='completeQuote($event,i)'></app-details>
-    <button type="button" (click)='addVote(i)' name="upvote">upvote</button>
-    <p>{{quote.upvote}}</p>
-    <button type="button" (click)='minusVote(i)' name="downvote">downvote</button>
-    <p>{{quote.downvote}}</p>
-</div>
